@@ -86,7 +86,7 @@ class ShiftCyclicBuffer:
             self.front = 0
 
     def pop(self) -> int:
-        if (self.size == 0):
+        if self.size == 0:
             raise RuntimeError("Can not pop an empty buffer")
         elem = self.buf[self.front]
         self.size -= 1
@@ -94,7 +94,7 @@ class ShiftCyclicBuffer:
         return elem
 
     def get_front(self) -> int:
-        if (self.size == 0):
+        if self.size == 0:
             raise RuntimeError("Buffer is empty")
         elem = self.buf[self.front]
         return elem
